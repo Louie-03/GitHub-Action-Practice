@@ -19,12 +19,10 @@ public class AccommodationSearchRequest {
 	@NotBlank
 	private String country;
 
-	@FutureOrPresent
 	@NotNull
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate checkIn;
 
-	@FutureOrPresent
 	@NotNull
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate checkOut;
