@@ -1,9 +1,8 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://172.31.46.236:3306/airbnb
-    username: loudong
-    password: '0524'
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testDB
+    username: sa
 
   jpa:
     hibernate:
@@ -12,7 +11,7 @@ spring:
       hibernate:
         format_sql: true
         show_sql: false
-        dialect: org.hibernate.spatial.dialect.mysql.MySQL8SpatialDialect
+        dialect: org.hibernate.spatial.dialect.h2geodb.GeoDBDialect
         default_batch_fetch_size: 100
     defer-datasource-initialization: true
 
@@ -20,7 +19,7 @@ spring:
     init:
       mode: always
       encoding: UTF-8
-      data-locations: classpath:dev/data.sql
+      data-locations: classpath:test/data.sql
 
 logging:
   level:

@@ -36,7 +36,7 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'mysql:mysql-connector-java'
     annotationProcessor 'org.projectlombok:lombok'
-    implementation 'com.h2database:h2:1.4.200'
+    testImplementation 'com.h2database:h2:1.4.200'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'io.rest-assured:rest-assured'
     testImplementation 'org.springframework.restdocs:spring-restdocs-restassured'
