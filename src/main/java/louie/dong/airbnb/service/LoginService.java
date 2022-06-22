@@ -12,7 +12,7 @@ public class LoginService {
     private final MemberRepository memberRepository;
 
     public void login(Member member) {
-        if (memberRepository.existsByGitHubIdNot(member.getGitHubId())) {
+        if (!memberRepository.existsByGitHubId(member.getGitHubId())) {
             memberRepository.save(member);
         }
     }

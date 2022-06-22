@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface MemberRepository extends JpaRepository<Member, Long> {
 
-    boolean existsByGitHubIdNot(String gitHubId);
+    boolean existsByGitHubId(String gitHubId);
 
 }

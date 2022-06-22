@@ -28,7 +28,10 @@ jobs:
           java-version: '11'
           distribution: 'temurin'
       - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+        run: |
+          sudo systemctl start mysql
+          sudo systemctl status mysql
+          chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build
 

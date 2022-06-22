@@ -28,7 +28,7 @@ public class GitHubOAuthService {
 
     public GitHubAccessToken requestAccessToken(String code) {
         return webClient.post()
-            .uri(ACCESSTOKEN_API_URL)
+            .uri(ACCESS_TOKEN_API_URL)
             .accept(MediaType.APPLICATION_JSON)
             .bodyValue(new GitHubAccessTokenRequest(code))
             .retrieve()
