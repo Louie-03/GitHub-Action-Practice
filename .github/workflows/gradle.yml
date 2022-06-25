@@ -27,11 +27,19 @@ jobs:
         with:
           java-version: '11'
           distribution: 'temurin'
-      - name: Grant execute permission for gradlew
+
+      - name: Set up Database
         run: |
           sudo systemctl start mysql
-          sudo systemctl status mysql
-          chmod +x gradlew
+          sudo mysql -uroot
+          create user 'loudong'@'localhost' identified by '0524';
+          grant all privileges on *.* to 'loudong'@'localhost';
+          flush privileges;
+          exit
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
+
       - name: Build with Gradle
         run: ./gradlew build
 
